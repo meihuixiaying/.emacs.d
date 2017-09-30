@@ -11,9 +11,10 @@
 
 ;; Without this comment emacs25 adds (package-initialize) here
 ;; (package-initialize)
-
 ;; Increase gc-cons-threshold, depending on your system you may set it back to a
 ;; lower value in your dotfile (function `dotspacemacs/user-config')
+
+
 (setq gc-cons-threshold 100000000)
 
 (defconst spacemacs-version          "0.200.9" "Spacemacs version.")
@@ -32,3 +33,32 @@
   (spacemacs/setup-startup-hook)
   (require 'server)
   (unless (server-running-p) (server-start)))
+
+;; (require 'package)
+
+;; (add-to-list 'package-archives
+;;              '("melpa" . "http://melpa.org/packages/") t)
+
+;; (package-initialize)
+
+;; (when (not package-archive-contents)
+;;   (package-refresh-contents))
+
+;; (defvar myPackages
+;;   '(elpy
+;;     flycheck
+;;     py-autopep8))
+
+;; (mapc #'(lambda (package)
+;;           (unless (package-installed-p package)
+;;             (package-install package)))
+;;       myPackages)
+
+;; (elpy-enable)
+
+;; (when (require 'flycheck nil t)
+;;   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+;;   (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+;; (require 'py-autopep8)
+;; (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
